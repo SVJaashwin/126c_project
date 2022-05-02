@@ -7,8 +7,10 @@ function setup() {
     canvas.center();
     video = createCapture(VIDEO)
     video.hide();
-
+    posenet = ml5.poseNet(video, modalLoaded);
+    posenet.on("pose", gotPoses);
 }
+
 
 function draw() {
     image(video, 0, 0, 500, 500)
