@@ -14,9 +14,17 @@ function draw() {
     image(video, 0, 0, 500, 500)
 }
 
-function play_music() {
-    music.play();
+function song_name() {
 
-    music.setVolume(1);
-    music.setrate(1);
+}
+
+function gotPoses(result) {
+    console.log(result)
+    leftWrist_x = result[0].pose.leftWrist.x;
+    leftWrist_y = result[0].pose.leftWrist.y;
+    rightWrist_x = result[0].pose.rightWrist.x;
+    rightWrist_y = result[0].pose.rightWrist.y;
+    console.log('left_wristx=', leftWrist_x, 'left_wristy=', leftWrist_y);
+    console.log('right_wristx=', rightWrist_x, 'right_wristy=', rightWrist_y)
+
 }
